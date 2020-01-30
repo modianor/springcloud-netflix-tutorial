@@ -1,0 +1,40 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: springcloud-provider-dept-8001
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+
+    druid:
+      username: root
+      password: 2482510236
+
+#      必须开启 否则监控页面不显示执行的sql
+      filter:
+        stat:
+          enabled: true
+
+      web-stat-filter.enabled: true
+      web-stat-filter.url-pattern: /*
+      web-stat-filter.exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+      web-stat-filter.session-stat-enable: true
+      web-stat-filter.session-stat-max-count: 10
+      web-stat-filter.principal-session-name: session_name
+      web-stat-filter.principal-cookie-name: cookie_name
+      web-stat-filter.profile-enable: true
+      stat-view-servlet.enabled: true
+      stat-view-servlet.url-pattern: /druid/*
+      stat-view-servlet.reset-enable: false
+      stat-view-servlet.login-username: admin #监控页面登录的用户名
+      stat-view-servlet.login-password: 123456 #监控页面登录的密码
+      stat-view-servlet.allow: 127.0.0.1
+
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: cn.edu.usts.pojo
+
