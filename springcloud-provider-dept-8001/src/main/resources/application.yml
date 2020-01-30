@@ -38,3 +38,15 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: cn.edu.usts.pojo
 
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-7001.com:7001/eureka
+  instance:
+    instance-id: springcloud-provider-dept-8001
+
+info:
+  app.name: modian-springcloud
+  company.name: blog.modian.com
+

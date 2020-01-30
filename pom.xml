@@ -12,6 +12,8 @@
         <module>springcloud-provider-dept-8001</module>
         <module>springcloud-consumer-dept-80</module>
         <module>springcloud-eureka-7001</module>
+        <module>springcloud-eureka-7002</module>
+        <module>springcloud-eureka-7003</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -22,7 +24,8 @@
         <java.version>1.8</java.version>
         <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.RELEASE</spring.cloud.version>
-        <spring.cloud.eureka>1.4.7.RELEASE</spring.cloud.eureka>
+        <spring.cloud.eureka.version>1.4.7.RELEASE</spring.cloud.eureka.version>
+        <spring.boot.actuator.version>2.2.4.RELEASE</spring.boot.actuator.version>
         <jetty.version>6.1.26</jetty.version>
         <mysql.version>8.0.19</mysql.version>
         <mybatis.version>2.1.1</mybatis.version>
@@ -66,12 +69,27 @@
                 <version>${spring.boot.version}</version>
             </dependency>
 
-            <!--Eureka-->
+            <!--Eureka server-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-eureka-server</artifactId>
-                <version>${spring.cloud.eureka}</version>
+                <version>${spring.cloud.eureka.version}</version>
             </dependency>
+
+            <!--Eureka client-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka</artifactId>
+                <version>${spring.cloud.eureka.version}</version>
+            </dependency>
+
+            <!--actuator-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring.boot.actuator.version}</version>
+            </dependency>
+
 
             <!--mybatis-->
             <dependency>
