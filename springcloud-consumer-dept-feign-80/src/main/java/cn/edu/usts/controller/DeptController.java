@@ -2,6 +2,8 @@ package cn.edu.usts.controller;
 
 
 import cn.edu.usts.pojo.Dept;
+import cn.edu.usts.service.DeptClientService;
+import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,13 +15,11 @@ import org.springframework.web.client.RestTemplate;
 public class DeptController {
 
     @Autowired
-    private RestTemplate restTemplate;
-
-    private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT-8001"/*"http://localhost:8001/"*/;
+    private DeptClientService deptClientService;
 
     @RequestMapping(path = "/consumer/dept/get/{id}")
     public Dept get(@NonNull @PathVariable(name = "id") Integer id) {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
+        return deptClientService.get(id);
     }
 
 }
