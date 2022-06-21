@@ -30,7 +30,7 @@
         <spring.cloud.feign.version>1.4.7.RELEASE</spring.cloud.feign.version>
         <spring.boot.actuator.version>2.2.4.RELEASE</spring.boot.actuator.version>
         <jetty.version>6.1.26</jetty.version>
-        <mysql.version>8.0.19</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <mybatis.version>2.1.1</mybatis.version>
         <druid.version>1.1.20</druid.version>
         <lombok.version>1.18.10</lombok.version>
